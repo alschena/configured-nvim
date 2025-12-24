@@ -10,4 +10,7 @@
     ./snippet-collection.nix
     ./post.nix
   ];
+
+  viAlias = true;
+  waylandSupport = true;
 }
