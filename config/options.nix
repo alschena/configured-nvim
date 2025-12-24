@@ -1,0 +1,48 @@
+{
+    globals = { mapleader = " "; };
+    opts = {
+      switchbuf = "usetab";
+      undofile = true;
+      shada = "'100,<50,s10,:1000,/100,@100,h";
+      breakindent = true;
+      breakindentopt = "list:-1";
+      colorcolumn = "+1";
+      cursorline = true;
+      linebreak = true;
+      list = true;
+      number = true;
+      pumheight = 10;
+      ruler = false;
+      shortmess = "CFOSWaco";
+      showmode = false;
+      signcolumn = "yes";
+      splitbelow = true;
+      splitkeep = "screen";
+      splitright = true;
+      winborder = "single";
+      wrap = false;
+      cursorlineopt = "screenline,number";
+      fillchars = "eob: ,fold:╌";
+      listchars = "extends:…,nbsp:␣,precedes:…,tab:> ";
+      foldlevel = 10;
+      foldmethod = "indent";
+      foldnestmax = 10;
+      foldtext = "";
+      autoindent = true;
+      expandtab = true;
+      formatoptions = "rqnl1j";
+      ignorecase = true;
+      incsearch = true;
+      infercase = true;
+      shiftwidth = 2;
+      smartcase = true;
+      smartindent = true;
+      spelloptions = "camel";
+      tabstop = 2;
+      virtualedit = "block";
+      iskeyword = "@,48-57,_,192-255,-";
+      formatlistpat = "[[^s*[0-9-+*]+[.)]*s+]]";
+      complete = ".,w,b,kspell";
+      completeopt = "menuone,noselect,fuzzy,nosort";
+      };
+}
