@@ -8,6 +8,7 @@
     ./lsp.nix
     ./formatting.nix
     ./snippet-collection.nix
+    ./language/rust.nix
     ./post.nix
   ];
 
