@@ -130,7 +130,7 @@
             ];
 
           };
-          # cmdline = { enable = true; };
+          cmdline = { enable = true; };
           colors = { enable = true; };
           comment = { enable = true; };
           completion = {
@@ -145,7 +145,7 @@
           files = { enable = true; };
           fuzzy = { enable = false; };
           git = { enable = true; };
-          # hlpatterns = { enable = true; };
+          hipatterns = { enable = true; };
           icons = { enable = true; };
           indentscope = { enable = true; };
           jump = { enable = true; };
