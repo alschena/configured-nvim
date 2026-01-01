@@ -1,15 +1,16 @@
 {
   # Import all your configuration modules here
   imports = [
-    ./options.nix
-    ./keymaps.nix
-    ./mini.nix
-    ./treesitter.nix
-    ./lsp.nix
+    ./direnv.nix
     ./formatting.nix
-    ./snippet-collection.nix
+    ./keymaps.nix
     ./language/rust.nix
+    ./lsp.nix
+    ./mini.nix
+    ./options.nix
     ./post.nix
+    ./snippet-collection.nix
+    ./treesitter.nix
   ];
 
   viAlias = true;
