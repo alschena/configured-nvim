@@ -23,7 +23,8 @@
       # Python
       ty.enable = true;
       ruff.enable = true;
-      py-lsp.enable = true;
+      pylsp.enable = true;
+      jedi_language_server.enable = true;
     };
   };
 }
