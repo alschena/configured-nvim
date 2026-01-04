@@ -151,7 +151,7 @@
       move = { enable = true; };
       notify = { enable = true; };
       operators = { enable = true; };
-      pairs = { enable = true; };
+      pairs = { enable = false; };
       pick = { enable = true; };
       sessions = { enable = true; };
       snippets = { enable = true; };

@@ -7,6 +7,7 @@
     ./language/rust.nix
     ./lsp.nix
     ./mini.nix
+    ./nvim-autopairs.nix
     ./options.nix
     ./post.nix
     ./snippet-collection.nix
