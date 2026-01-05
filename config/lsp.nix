@@ -4,10 +4,7 @@
   # Rust
   plugins.rustaceanvim.enable = true;
   # Grammar
-  plugins.ltex-extra = {
-    enable = true;
-    settings.load-langs = [ "en-US" "it" ];
-  };
+  plugins.ltex-extra.enable = true;
 
   lsp = {
     inlayHints = { enable = true; };
@@ -19,7 +16,10 @@
       nixd.enable = true;
       clangd.enable = true;
       # Grammar
-      ltex.enable = true;
+      ltex = {
+        enable = true;
+        config = { config.load-langs = [ "en-US" "it" ]; };
+      };
       # Python
       ty.enable = true;
       ruff.enable = true;

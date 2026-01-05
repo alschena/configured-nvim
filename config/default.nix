@@ -5,6 +5,7 @@
     ./formatting.nix
     ./keymaps.nix
     ./language/rust.nix
+    ./language/markdown.nix
     ./lsp.nix
     ./mini.nix
     ./nvim-autopairs.nix
