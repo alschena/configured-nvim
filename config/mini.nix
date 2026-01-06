@@ -19,8 +19,22 @@
       bufremove = { };
       clue = {
         clues = [
-          (lib.nixvim.mkRaw
-            "\n              {\n                {mode = 'n', keys = '<Leader>b', desc = '+Buffer'},\n                {mode = 'n', keys = '<Leader>e', desc = '+Explore/Edit'},\n                {mode = 'n', keys = '<Leader>f', desc = '+Find'},\n                {mode = 'n', keys = '<Leader>g', desc = '+Git'},\n                {mode = 'n', keys = '<Leader>l', desc = '+Language'},\n                {mode = 'n', keys = '<Leader>o', desc = '+Other'},\n                {mode = 'n', keys = '<Leader>s', desc = '+Session'},\n                {mode = 'n', keys = '<Leader>t', desc = '+Terminal'},\n                {mode = 'n', keys = '<Leader>v', desc = '+Visits'},\n\n                {mode = 'x', keys = '<Leader>g', desc = '+Git'},\n                {mode = 'x', keys = '<Leader>l', desc = '+Language'},\n              }\n              ")
+          (lib.nixvim.mkRaw ''
+            {
+              {mode = 'n', keys = '<Leader>b', desc = '+Buffer'},
+              {mode = 'n', keys = '<Leader>e', desc = '+Explore/Edit'},
+              {mode = 'n', keys = '<Leader>f', desc = '+Find'},
+              {mode = 'n', keys = '<Leader>g', desc = '+Git'},
+              {mode = 'n', keys = '<Leader>l', desc = '+Language'},
+              {mode = 'n', keys = '<Leader>o', desc = '+Other'},
+              {mode = 'n', keys = '<Leader>s', desc = '+Session'},
+              {mode = 'n', keys = '<Leader>t', desc = '+Terminal'},
+              {mode = 'n', keys = '<Leader>v', desc = '+Visits'},
+
+              {mode = 'x', keys = '<Leader>g', desc = '+Git'},
+              {mode = 'x', keys = '<Leader>l', desc = '+Language'},
+            }
+          '')
           (lib.nixvim.mkRaw
             ''require("mini.clue").gen_clues.builtin_completion()'')
           (lib.nixvim.mkRaw ''require("mini.clue").gen_clues.g()'')
@@ -112,6 +126,10 @@
           }
           {
             keys = "<Leader>";
+            mode = "n";
+          }
+          {
+            keys = ",";
             mode = "n";
           }
           {

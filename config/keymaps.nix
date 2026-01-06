@@ -371,6 +371,12 @@
 
     # Other
     {
+      key = ",";
+      mode = "n";
+      action = "<Nop>";
+      options = { desc = "+Comments/EditOperators"; };
+    }
+    {
       key = "<Leader>or";
       mode = "n";
       action = "<Cmd>lua MiniMisc.resize_window()<CR>";
