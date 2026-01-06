@@ -16,8 +16,6 @@
       };
 
       align = { enable = true; };
-      animate = { enable = false; };
-      basics = { enable = false; };
       bracketed = { enable = true; };
       bufremove = { enable = true; };
       clue = {
@@ -133,12 +131,9 @@
         lsp_completion.process_items = lib.nixvim.mkRaw ''
           function(items, base) return require("mini.completion").default_process_items(items, base, { kind_priority = { Text = -1, Snippet = 99}}) end'';
       };
-      cursorword = { enable = true; };
       diff = { enable = true; };
-      doc = { enable = false; };
       extra = { enable = true; };
       files = { enable = true; };
-      fuzzy = { enable = false; };
       git = { enable = true; };
       hipatterns = { enable = true; };
       icons = { enable = true; };
@@ -151,7 +146,6 @@
       move = { enable = true; };
       notify = { enable = true; };
       operators = { enable = true; };
-      pairs = { enable = false; };
       pick = { enable = true; };
       sessions = { enable = true; };
       snippets = { enable = true; };
@@ -160,7 +154,6 @@
       statusline = { enable = true; };
       surround = { enable = true; };
       tabline = { enable = true; };
-      test = { enable = false; };
       trailspace = { enable = true; };
       visits = { enable = true; };
     };
