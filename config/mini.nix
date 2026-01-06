@@ -4,22 +4,20 @@
     autoLoad = true;
     modules = {
       ai = {
-        enable = true;
-        settings.custom_textobjects = {
+        custom_textobjects = {
           B = (lib.nixvim.mkRaw ''require("mini.extra").gen_ai_spec.buffer()'');
           D = (lib.nixvim.mkRaw
             ''require("mini.extra").gen_ai_spec.diagnostic()'');
           F = (lib.nixvim.mkRaw ''
             require("mini.ai").gen_spec.treesitter({ a = '@function.outer', i = '@function.inner'})'');
         };
-        search_method = "cover";
+        search_method = "cover_or_next";
       };
 
-      align = { enable = true; };
-      bracketed = { enable = true; };
-      bufremove = { enable = true; };
+      align = { };
+      bracketed = { };
+      bufremove = { };
       clue = {
-        enable = true;
         clues = [
           (lib.nixvim.mkRaw
             "\n              {\n                {mode = 'n', keys = '<Leader>b', desc = '+Buffer'},\n                {mode = 'n', keys = '<Leader>e', desc = '+Explore/Edit'},\n                {mode = 'n', keys = '<Leader>f', desc = '+Find'},\n                {mode = 'n', keys = '<Leader>g', desc = '+Git'},\n                {mode = 'n', keys = '<Leader>l', desc = '+Language'},\n                {mode = 'n', keys = '<Leader>o', desc = '+Other'},\n                {mode = 'n', keys = '<Leader>s', desc = '+Session'},\n                {mode = 'n', keys = '<Leader>t', desc = '+Terminal'},\n                {mode = 'n', keys = '<Leader>v', desc = '+Visits'},\n\n                {mode = 'x', keys = '<Leader>g', desc = '+Git'},\n                {mode = 'x', keys = '<Leader>l', desc = '+Language'},\n              }\n              ")
@@ -123,39 +121,61 @@
         ];
 
       };
-      cmdline = { enable = true; };
-      colors = { enable = true; };
-      comment = { enable = true; };
+      cmdline = { };
+      colors = { };
+      comment = {
+        mappings = {
+          comment = ",c";
+          comment_line = ",cc";
+          comment_visual = ",c";
+          textobject = ",c";
+        };
+      };
       completion = {
-        enable = true;
         lsp_completion.process_items = lib.nixvim.mkRaw ''
           function(items, base) return require("mini.completion").default_process_items(items, base, { kind_priority = { Text = -1, Snippet = 99}}) end'';
       };
-      diff = { enable = true; };
-      extra = { enable = true; };
-      files = { enable = true; };
-      git = { enable = true; };
-      hipatterns = { enable = true; };
-      icons = { enable = true; };
-      indentscope = { enable = true; };
-      jump = { enable = true; };
-      jump2d = { enable = true; };
-      keymap = { enable = true; };
-      map = { enable = true; };
-      misc = { enable = true; };
-      move = { enable = true; };
-      notify = { enable = true; };
-      operators = { enable = true; };
-      pick = { enable = true; };
-      sessions = { enable = true; };
-      snippets = { enable = true; };
-      splitjoin = { enable = true; };
-      starter = { enable = true; };
-      statusline = { enable = true; };
-      surround = { enable = true; };
-      tabline = { enable = true; };
-      trailspace = { enable = true; };
-      visits = { enable = true; };
+      diff = { };
+      extra = { };
+      files = { };
+      git = { };
+      hipatterns = { };
+      icons = { };
+      indentscope = { };
+      jump = { };
+      jump2d = { };
+      keymap = { };
+      map = { };
+      misc = { };
+      move = { };
+      notify = { };
+      operators = {
+        evaluate = { prefix = ",="; };
+        exchange = {
+          prefix = ",x";
+          reindent_linewise = true;
+        };
+        multiply = { prefix = ",m"; };
+        replace = {
+          prefix = ",r";
+          reindent_linewise = true;
+        };
+        sort = { prefix = ",s"; };
+
+      };
+      pick = { };
+      sessions = { };
+      snippets = { };
+      splitjoin = { };
+      starter = { };
+      statusline = { };
+      surround = {
+        n_lines = 50;
+        search_method = "cover_or_next";
+      };
+      tabline = { };
+      trailspace = { };
+      visits = { };
     };
   };
 }
