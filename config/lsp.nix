@@ -1,8 +1,21 @@
-{ lib, ... }: {
+{ pkgs, lib, ... }: {
   # Common configurations
   plugins.lspconfig.enable = true;
   # Rust
   plugins.rustaceanvim.enable = true;
+  # Generic linter (extension to setup special handlers)
+  extraPlugins = with pkgs.vimPlugins; [ sonarlint-nvim ];
+  extraConfigLua = ''
+    require('sonarlint').setup({
+      server = {
+        cmd = {
+          "sonarlint-ls",
+          "-stdio"
+          },
+      },
+      filetypes = {"cpp", "python", "dockerfile", "c", "rust"},
+      })
+  '';
   # Grammar
   plugins.ltex-extra.enable = true;
 
@@ -23,6 +36,12 @@
       # Python
       ty.enable = true;
       ruff.enable = true;
+      # Generic linter (look above for handlers extension)
+      sonarlint = {
+        enable = true;
+        activate = false;
+        package = pkgs.sonarlint-ls;
+      };
       pylsp.enable = true;
       jedi_language_server.enable = true;
     };
