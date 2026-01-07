@@ -23,8 +23,13 @@
     inlayHints = { enable = true; };
     servers = {
       "*" = {
-        config.capabilities = lib.nixvim.mkRaw
-          ''require("mini.completion").get_lsp_capabilities()'';
+        config.capabilities = lib.nixvim.mkRaw ''
+          vim.tbl_deep_extend(
+            "force", -- Overwrite on conflicts
+            vim.lsp.protocol.make_client_capabilities(), -- All capabilities
+            require("mini.completion").get_lsp_capabilities() -- mini.completion capabilities adapter
+          )
+        '';
       };
       nixd.enable = true;
       clangd.enable = true;
