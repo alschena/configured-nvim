@@ -72,7 +72,7 @@
       options = { desc = "Notifications"; };
     }
     {
-      action = ''
+      action.__raw = ''
         function()
           for _, win_id in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
             if vim.fn.getwininfo(win_id)[1].quickfix == 1 then return vim.cmd('cclose') end
@@ -126,6 +126,16 @@
       mode = "n";
       action = ''<Cmd>Pick git_commits path="%"<CR>'';
       options = { desc = "Commits (buf)"; };
+    }
+    {
+      key = "<Leader>fx";
+      mode = "n";
+      action.__raw = ''
+        function()
+          MiniPick.start(vim.lsp.commands)
+        end
+      '';
+      options = { desc = "LSP workspace commands"; };
     }
     {
       key = "<Leader>fd";
