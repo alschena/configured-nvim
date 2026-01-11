@@ -185,7 +185,6 @@
       sessions = { };
       snippets = { };
       splitjoin = { };
-      starter = { };
       statusline = { };
       surround = {
         n_lines = 50;
