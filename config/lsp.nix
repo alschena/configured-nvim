@@ -34,10 +34,7 @@
       nixd.enable = true;
       clangd.enable = true;
       # Grammar
-      ltex = {
-        enable = true;
-        config = { settings.load-langs = [ "en-US" "it" ]; };
-      };
+      ltex.enable = true;
       # Python
       ty.enable = true;
       ruff.enable = true;
