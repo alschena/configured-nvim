@@ -36,7 +36,7 @@
       # Grammar
       ltex = {
         enable = true;
-        config = { config.load-langs = [ "en-US" "it" ]; };
+        config = { settings.load-langs = [ "en-US" "it" ]; };
       };
       # Python
       ty.enable = true;
